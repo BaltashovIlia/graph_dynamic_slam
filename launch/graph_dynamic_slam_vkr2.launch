@@ -1,0 +1,43 @@
+<launch>
+<node pkg="graph_dynamic_slam" type="graph_dynamic_slam" name="graph_dynamic_slam" clear_params="true" output="screen">
+
+  <!-- Common -->
+  <param name="map_frame_id"           type="str"     value="map" />
+  <param name="publish_fraim_id"       type="str"     value="odom" />
+  <param name="enable_tf_pub"          type="bool"    value="true" />
+
+  <!-- Submp -->
+  <param name="max_num_of_cloud_in_submap" type="int" value="15" />  
+  <param name="voxel_filter_leaf_size" type="double"  value="0.02" />
+  <param name="min_transform_trans"    type="double"  value="0.02" />   
+  <param name="min_transform_rotation" type="double"  value="0.02" /> 
+
+  <!-- Dynamic -->
+  <param name="enable_dynamic_filter"       type="bool"    value="true" />
+  <param name="dynamic_point_dl"            type="double"  value="0.05" /> 
+  <param name="dynamic_point_dr"            type="double"  value="2.0" /> 
+  <param name="dynamic_point_rad_to_delete" type="double"  value="0.5" />  
+
+
+
+  <!-- Registrtion -->
+  <param name="ndt_maximum_iterations"     type="int"    value="10" />
+  <param name="ndt_transformation_epsilon" type="double" value="0.01" />
+  <param name="ndt_resolution"             type="double" value="1.0" />  
+  <param name="registration_max_fitness_score"          type="double" value="100.0" /> 
+
+  <!-- Loop closing -->
+  <param name="enable_loop_closing"      type="bool"   value="true" />
+  <param name="loop_min_delta_id"        type="int"    value="4" />
+  <param name="loop_min_accumulate_dist" type="double" value="1.5" />
+  <param name="loop_max_direct_dist"     type="double" value="7.0" />
+  <param name="loop_max_iterations_optimize" type="int" value="20" />
+  <param name="loop_max_fitness_score"       type="double" value="0.3" />
+  <param name="loop_max_node_to_optimize"    type="int" value="3" />
+  <param name="loop_k_acc_dist"              type="double" value="0.1" />
+  <param name="loop_dist_dynmic_max"         type="double" value="1.0" />
+
+
+</node>
+</launch>
+
